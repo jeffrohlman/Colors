@@ -11,6 +11,7 @@ import UIKit
 class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var colors = ["red", "orange", "yellow", "green", "blue", "purple", "brown"]
+    var backgroundColors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.brown]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,8 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
         
         cell.textLabel?.text = colors[indexPath.row]
+        
+        cell.backgroundColor = backgroundColors[indexPath.row]
         
         return cell
     }
